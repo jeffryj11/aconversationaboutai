@@ -1,0 +1,12 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --gradient-start: #5F2CFF;
+  --gradient-end: #7F5CFF;
+}
+
+body {
+  @apply antialiased;
+}
