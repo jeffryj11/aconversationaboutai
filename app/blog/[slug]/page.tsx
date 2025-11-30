@@ -13,14 +13,14 @@ const posts: BlogPost[] = [
     title: "How to Think About AI in 2025",
     date: "2025-11-01",
     body:
-      "This is where a long-form essay would go. For now, this is placeholder content so you can see layout and typography.",
+      "This essay sketches out a way to think about modern AI systems: not as magic, but as extremely capable pattern engines that sit on top of compute, data, and product decisions. The real leverage comes from how you wire them into workflows, not which model is on the front page this week.",
   },
   {
     slug: "ai-tools-for-small-business",
     title: "AI Tools for Small Business Owners",
     date: "2025-11-10",
     body:
-      "Here you might walk through practical use cases, tool stacks, and workflows for running a small business with AI.",
+      "This piece walks through practical use cases, tool stacks, and workflows for running a small business with AI: from inbox triage and quoting to reporting, hiring, and planning. The goal is to make AI feel like a boring, reliable part of the back office.",
   },
 ];
 

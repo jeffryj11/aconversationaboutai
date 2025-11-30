@@ -21,6 +21,8 @@ export default function Navbar() {
           <a href="/news">News</a>
           <a href="/tools">Tools</a>
           <a href="/blog">Blog</a>
+          <a href="/start-here">Start Here</a>
+          <a href="/about">About</a>
         </nav>
       </div>
     </header>
