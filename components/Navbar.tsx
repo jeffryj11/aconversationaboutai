@@ -2,7 +2,7 @@ import SearchBar from "./SearchBar";
 
 export default function Navbar() {
   return (
-    <header className="w-full border-b border-gray-200">
+    <header className="w-full border-b border-gray-200 bg-white/80 backdrop-blur">
       <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between gap-4">
         <a
           href="/"

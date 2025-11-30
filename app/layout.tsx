@@ -2,6 +2,8 @@ import "./globals.css";
 import { Inter, Oxanium } from "next/font/google";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import SponsorStrip from "@/components/SponsorStrip";
+
 import type { ReactNode } from "react";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
@@ -18,8 +20,9 @@ export const metadata = {
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en" className={`${inter.variable} ${oxanium.variable}`}>
-      <body className="min-h-screen flex flex-col bg-white text-gray-900">
+      <body className="min-h-screen flex flex-col">
         <Navbar />
+        <SponsorStrip />
         <main className="flex-1">{children}</main>
         <Footer />
       </body>

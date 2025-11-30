@@ -13,6 +13,7 @@ module.exports = {
       colors: {
         gradientStart: "#5F2CFF",
         gradientEnd: "#7F5CFF",
+        sponsorGold: "#F6C453",
       },
     },
   },

@@ -1,3 +1,5 @@
+import AdSlot from "@/components/AdSlot";
+
 type BlogPost = {
   slug: string;
   title: string;
@@ -37,14 +39,34 @@ export default function BlogDetailPage({ params }: { params: { slug: string } })
   }
 
   return (
-    <main className="max-w-3xl mx-auto px-6 py-16">
-      <h1 className="text-4xl font-oxanium font-bold mb-4">{post.title}</h1>
-      <p className="text-xs text-gray-500 mb-8">
-        {new Date(post.date).toLocaleDateString()}
-      </p>
+    <main className="max-w-4xl mx-auto px-6 py-16 grid md:grid-cols-[3fr,1fr] gap-10">
       <article className="space-y-4 text-gray-800 leading-relaxed">
+        <h1 className="text-4xl font-oxanium font-bold mb-2">{post.title}</h1>
+        <p className="text-xs text-gray-500 mb-4">
+          {new Date(post.date).toLocaleDateString()}
+        </p>
         <p>{post.body}</p>
+        <div className="mt-6">
+          <AdSlot
+            id="blog-article-inline"
+            variant="inline"
+            label="In-Article Placement"
+          />
+        </div>
       </article>
+
+      <aside className="space-y-6">
+        <AdSlot
+          id="blog-article-sidebar-1"
+          variant="sidebar"
+          label="Article Sidebar"
+        />
+        <AdSlot
+          id="blog-article-sidebar-2"
+          variant="sidebar"
+          label="Secondary Sidebar"
+        />
+      </aside>
     </main>
   );
 }

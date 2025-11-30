@@ -1,31 +1,30 @@
-# AConversationAboutAI.com — Full Local Site Structure
+# AConversationAboutAI.com — Monetization Layout Build
 
-This is a Next.js 14 + TailwindCSS project with working pages for:
+This Next.js 14 + TailwindCSS project includes:
 
-- Home
-- /news and /news/[slug]
-- /tools and /tools/[slug]
-- /blog and /blog/[slug]
+- Home page with:
+  - Top banner ad slot
+  - Inline briefing ad slot
+  - Sidebar ad slot
+  - Newsletter teaser block
+  - Sponsor strip + sponsor grid
+  - "Advertise with us" copy section
+- News, Tools, and Blog:
+  - Index + detail pages
+  - Clearly labeled ad slots (banner, inline, sidebar)
+  - Sponsored tools section and badge support
 
-All content is mock data in TypeScript files so you can run everything locally
-without any external services yet.
+All ad areas are **placeholders** using the `AdSlot` component so you can
+visually design your monetization without connecting any ad network yet.
 
-## Getting Started
+## Running locally
 
-1. Install Node.js (v18+).
+```bash
+npm install
+npm run dev
+```
 
-2. In this folder, install dependencies:
+Open http://localhost:3000 to view the site.
 
-   ```bash
-   npm install
-   ```
-
-3. Run the dev server:
-
-   ```bash
-   npm run dev
-   ```
-
-4. Open http://localhost:3000 in your browser.
-
-From here we can later plug in Sanity CMS, newsletter, automation, and monetization.
+Once this looks good locally, push it to GitHub and Vercel the same way as the
+previous build, replacing the old files (but still excluding `node_modules` and `.next`).
