@@ -1,5 +1,3 @@
-import AdSlot from "@/components/AdSlot";
-
 type NewsItem = {
   slug: string;
   title: string;
@@ -9,18 +7,27 @@ type NewsItem = {
 
 const newsItems: NewsItem[] = [
   {
-    slug: "today-in-ai-1",
-    title: "Today in AI — Sample Briefing",
+    slug: "today-in-ai-vertical-models",
+    title: "Today in AI: Foundation Models Quietly Go Vertical",
     date: "2025-11-30",
     body:
-      "This is placeholder content for the daily AI briefing. Later, this will come from Sanity CMS and/or an automated GPT summary.",
+      "Over the last year, most of the noise in AI has been about \"the biggest\" and \"most powerful\" general-purpose models. What’s happening underneath the hype is more interesting: teams are quietly training or fine-tuning models that are brutally narrow, but incredibly useful.\n\n" +
+      "You’re starting to see this in places like legal, healthcare documentation, financial analysis, customer support, and industrial operations. Instead of asking \"Which model is the smartest?\", these teams ask \"What exactly are we trying to decide, and what data do we already trust?\"\n\n" +
+      "Two patterns are emerging:\n\n" +
+      "1. Vertical copilots — tools that live inside an existing workflow (EHR, CRM, IDE, design tool) and answer only a small set of domain-shaped questions very well.\n" +
+      "2. Decision scaffolding — systems that don’t replace a human judgment call, but lay out the relevant facts, similar cases, and likely outcomes so a human can decide faster and with more context.\n\n" +
+      "Why this matters: if you’re a founder or operator, you probably don’t need \"the best model.\" You need a boring, reliable model that understands your data and your decisions. That’s a very different buying and integration conversation.\n\n" +
+      "What to watch next:\n" +
+      "– Vendors who talk more about integrations and data pipelines than parameters.\n" +
+      "– Companies spinning down their own R&D spend and instead building on top of these vertical copilots.\n" +
+      "– Compliance and ops teams quietly becoming the power users of AI, because they already think in systems and edge cases.",
   },
   {
     slug: "openai-updates-sample",
     title: "OpenAI Releases New Sample Feature",
     date: "2025-11-29",
     body:
-      "Here you would put a longer-form writeup about the update, with links, analysis, and takeaways.",
+      "Here you would put a longer-form writeup about the update, with links, analysis, and takeaways. For now this remains placeholder content until you add a real story.",
   },
 ];
 
@@ -38,36 +45,19 @@ export default function NewsDetailPage({ params }: { params: { slug: string } })
     );
   }
 
-  return (
-    <main className="max-w-4xl mx-auto px-6 py-16 grid md:grid-cols-[3fr,1fr] gap-10">
-      <article className="space-y-4 text-gray-800 leading-relaxed">
-        <h1 className="text-4xl font-oxanium font-bold mb-2">{item.title}</h1>
-        <p className="text-xs text-gray-500 mb-4">
-          {new Date(item.date).toLocaleDateString()}
-        </p>
-        <p>{item.body}</p>
-        <div className="mt-6">
-          <AdSlot
-            id="news-article-inline"
-            variant="inline"
-            label="In-Article Sponsor"
-            description="Inline sponsor message or promoted resource."
-          />
-        </div>
-      </article>
+  const paragraphs = item.body.split("\n\n");
 
-      <aside className="space-y-6">
-        <AdSlot
-          id="news-article-sidebar-1"
-          variant="sidebar"
-          label="Article Sidebar"
-        />
-        <AdSlot
-          id="news-article-sidebar-2"
-          variant="sidebar"
-          label="Secondary Sidebar"
-        />
-      </aside>
+  return (
+    <main className="max-w-3xl mx-auto px-6 py-16">
+      <h1 className="text-4xl font-oxanium font-bold mb-4">{item.title}</h1>
+      <p className="text-xs text-gray-500 mb-8">
+        {new Date(item.date).toLocaleDateString()}
+      </p>
+      <article className="space-y-4 text-gray-800 leading-relaxed">
+        {paragraphs.map((para, idx) => (
+          <p key={idx}>{para}</p>
+        ))}
+      </article>
     </main>
   );
 }

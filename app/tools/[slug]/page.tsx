@@ -1,5 +1,3 @@
-import AdSlot from "@/components/AdSlot";
-
 type ToolDetail = {
   slug: string;
   name: string;
@@ -28,10 +26,19 @@ const tools: ToolDetail[] = [
     name: "Claude",
     category: "Chatbot / Assistant",
     description:
-      "Claude focuses on helpful, safe, and very long-context conversations. Placeholder copy until CMS is wired up.",
+      "Claude is at its best when you have long, squishy input: product specs, contracts, research dumps, transcripts, or multi-step reasoning. If ChatGPT feels great for quick ask-and-get tasks, Claude often feels like a patient collaborator for slow, deep work.",
     pricing: "Free tier + usage-based API pricing.",
-    pros: ["Very large context window", "Strong writing and analysis"],
-    cons: ["Some features may be region-limited"],
+    pros: [
+      "Handles very long documents without falling apart halfway through",
+      "Conservative tone and explicit about uncertainty",
+      "Strong at restructuring messy input into plans, outlines, and checklists",
+      "Works well for research synthesis, meeting notes, and policy drafts",
+    ],
+    cons: [
+      "Less playful by default; prompts sometimes need to be more explicit",
+      "Can feel slower on huge-context tasks",
+      "Still capable of hallucinations if pushed outside its lane",
+    ],
   },
 ];
 
@@ -83,26 +90,25 @@ export default function ToolDetailPage({ params }: { params: { slug: string } })
             </ul>
           </div>
         </div>
-
-        <AdSlot
-          id="tool-detail-inline"
-          variant="inline"
-          label="In-Profile Placement"
-          description="Space for an affiliate CTA, upgrade offer, or competing tool."
-        />
       </section>
 
       <aside className="space-y-6">
-        <AdSlot
-          id="tool-detail-sidebar-1"
-          variant="sidebar"
-          label="Tool Sidebar"
-        />
-        <AdSlot
-          id="tool-detail-sidebar-2"
-          variant="sidebar"
-          label="Secondary Sidebar"
-        />
+        <div className="border border-gray-200 rounded-xl p-4 text-sm text-gray-700">
+          <div className="text-xs font-semibold uppercase tracking-wide text-gray-500 mb-1">
+            How to actually use it
+          </div>
+          <p className="mb-2">
+            The real leverage isn&apos;t \"ask Claude anything.\" It&apos;s feeding it
+            raw artifacts you already have — user interviews, ticket descriptions,
+            internal docs — and asking it to reframe them into plans, decision memos,
+            risk lists, and customer stories.
+          </p>
+          <p>
+            Use it as a sanity-checker on your own thinking: \"Here&apos;s our plan;
+            what did we miss?\" or \"Here&apos;s the research; turn this into something
+            executives can read in three minutes.\" 
+          </p>
+        </div>
       </aside>
     </main>
   );
