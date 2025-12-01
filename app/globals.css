@@ -2,11 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --gradient-start: #5F2CFF;
-  --gradient-end: #7F5CFF;
-}
-
 body {
-  @apply antialiased bg-white text-gray-900;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
 }
